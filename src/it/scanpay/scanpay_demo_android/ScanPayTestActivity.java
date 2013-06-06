@@ -25,7 +25,7 @@ public class ScanPayTestActivity extends Activity
 	public void startScan(View v)
 	{
 		Intent scanActivity = new Intent(this, ScanPayActivity.class);
-		scanActivity.putExtra(ScanPay.EXTRA_TOKEN, "Enter_your_token_here");
+		scanActivity.putExtra(ScanPay.EXTRA_TOKEN, "ENTER_YOUR_TOKEN_HERE");
 
         //Put true if you want use your own manual entry UI
         scanActivity.putExtra(ScanPay.EXTRA_USE_CUSTOM_CONFIRMATION_VIEW, false);
