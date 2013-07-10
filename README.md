@@ -7,7 +7,7 @@ To give it a try:
 
 1. Clone this repo.
 2. Go to https://scanpay.it and sign up for a account and create a new app
-3. Download the SDK and Copy the folder libs/ and assets/ into the Project
+3. Download the SDK and Copy the folder libs/ into the Project
 4. Get the token of your app and in ScanPayTestActivity.java set the value of "ENTER_YOUR_TOKEN_HERE"
 
 Try and enjoy !
@@ -22,10 +22,9 @@ Requirements for card scanning
 Instruction
 -----------
 
-1. Copy the content of ScanPay asset folder into your project asset folder
-2. Copy the content of ScanPay libs folder into your project libs folder
-3. If using Eclipse, right click on your project name and click properties and add jar libScanpay.jar
-4. Add these permissions to your AndroidManifest.xml
+1. Copy the content of ScanPay libs folder into your project libs folder
+2. If using Eclipse, right click on your project name and click properties and add jar libScanpay.jar
+3. Add these permissions to your AndroidManifest.xml
 
   ```xml
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

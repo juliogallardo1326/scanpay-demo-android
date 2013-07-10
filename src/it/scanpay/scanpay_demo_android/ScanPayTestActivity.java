@@ -1,6 +1,6 @@
 package it.scanpay.scanpay_demo_android;
 
-import scanpay.it.SPCreditCard;
+import scanpay.it.model.SPCreditCard;
 import scanpay.it.ScanPay;
 import scanpay.it.ScanPayActivity;
 import android.app.Activity;
