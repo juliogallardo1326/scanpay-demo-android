@@ -93,3 +93,35 @@ Before you build in release mode, make sure to adjust your proguard configuratio
     *;
   }
   ```
+  
+  Helpers
+-----------
+
+SPWebViewFiller is an helper that can manage a Webview and fill the different inputs it provides.
+Here is how it works :
+
+### Case 1
+Webview is loaded and fields are ready to be filled
+
+```java
+SPWebViewFiller filler = new SPWebViewFiller(webview);
+filler.fillField("Id of the field", "Value_to_put_into_field");
+filler.fillField("Id of the field", "Value_to_put_into_field");
+```
+
+### Case 2
+Webview is not loaded and may encounter some redirections that cause the fields not to be available for the moment
+
+```java
+SPWebViewFiller filler = new SPWebViewFiller(webview);
+filler.addField("Id of the field", "Value_to_put_into_field");
+filler.addField("Id of the field", "Value_to_put_into_field");
+```
+
+You can then do your call with your webview and the inputs will be filled for you.
+
+
+Contact
+-----------
+
+For any problems or suggestions please contact us at support@scanpay.it
