@@ -59,11 +59,15 @@ Sample code
 
 Start scanning using
   ```java
-  Intent scanActivity = new Intent(this, ScanPayActivity.class);
-  scanActivity.putExtra(ScanPay.EXTRA_TOKEN, "ENTER_YOUR_TOKEN_HERE");
-  // If you want use your own credit card UI form
-  scanActivity.putExtra(ScanPay.EXTRA_USE_CUSTOM_CONFIRMATION_VIEW, true);
-  startActivityForResult(scanActivity, YOUR_RESULT_SCANPAY_ACTIVITY);
+    Intent scanActivity = new Intent(this, ScanPayActivity.class);
+    scanActivity.putExtra(ScanPay.EXTRA_TOKEN, "PUT_YOUR_TOKEN_HERE");
+
+    //Put true if you want use your own manual entry UI
+    scanActivity.putExtra(ScanPay.EXTRA_SHOULD_SHOW_CONFIRMATION_VIEW, true);
+
+    // You can hide button like that
+    // scanActivity.putExtra(ScanPay.EXTRA_SHOULD_SHOW_MANUAL_ENTRY_BUTTON, false);
+    startActivityForResult(scanActivity, YOUR_RESULT_DEFINE);
   ```
 
 To get the scan result, you must implement onActivityResult as follows

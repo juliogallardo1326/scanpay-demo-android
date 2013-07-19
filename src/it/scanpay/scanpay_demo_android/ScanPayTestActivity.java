@@ -1,6 +1,6 @@
 package it.scanpay.scanpay_demo_android;
 
-import scanpay.it.model.SPCreditCard;
+import scanpay.it.SPCreditCard;
 import scanpay.it.ScanPay;
 import scanpay.it.ScanPayActivity;
 import android.app.Activity;
@@ -25,10 +25,13 @@ public class ScanPayTestActivity extends Activity
 	public void startScan(View v)
 	{
 		Intent scanActivity = new Intent(this, ScanPayActivity.class);
-		scanActivity.putExtra(ScanPay.EXTRA_TOKEN, "ENTER_YOUR_TOKEN_HERE");
+		scanActivity.putExtra(ScanPay.EXTRA_TOKEN, "PUT_YOUR_TOKEN_HERE");
 
         //Put true if you want use your own manual entry UI
-        scanActivity.putExtra(ScanPay.EXTRA_USE_CUSTOM_CONFIRMATION_VIEW, false);
+        scanActivity.putExtra(ScanPay.EXTRA_SHOULD_SHOW_CONFIRMATION_VIEW, true);
+
+        // You can hide button like this
+        scanActivity.putExtra(ScanPay.EXTRA_SHOULD_SHOW_MANUAL_ENTRY_BUTTON, false);
         startActivityForResult(scanActivity, YOUR_RESULT_DEFINE);
 	}
 	
