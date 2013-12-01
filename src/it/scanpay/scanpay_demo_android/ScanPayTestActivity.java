@@ -1,14 +1,14 @@
 package it.scanpay.scanpay_demo_android;
 
-import scanpay.it.SPCreditCard;
-import scanpay.it.ScanPay;
-import scanpay.it.ScanPayActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
+
+import scanpay.it.CreditCard;
+import scanpay.it.ScanPay;
+import scanpay.it.ScanPayActivity;
 
 public class ScanPayTestActivity extends Activity
 {
@@ -42,7 +42,7 @@ public class ScanPayTestActivity extends Activity
       // The result code is ScanPay.RESULT_SCAN_SUCCESS when we succeed to scan
 	  if (requestCode == YOUR_RESULT_DEFINE && resultCode == ScanPay.RESULT_SCAN_SUCCESS)
 	  {
-	    SPCreditCard creditCard = (SPCreditCard) data.getParcelableExtra(ScanPay.EXTRA_CREDITCARD);
+	    CreditCard creditCard = (CreditCard) data.getParcelableExtra(ScanPay.EXTRA_CREDIT_CARD);
 	    Toast.makeText(this, creditCard.number + " " + creditCard.month + "/" + creditCard.year + " " + creditCard.cvv.length(), Toast.LENGTH_LONG).show();
 	  }
       // The result code is ScanPay.RESULT_SCAN_CANCEL when the user back
