@@ -16,7 +16,7 @@ Try and enjoy !
 Requirements for card scanning
 ------------------------------
 
-* Android SDK version 8 (Android 2.2) or later 
+* Android SDK version 8 (Android 2.2) or later
 * ARMv7 processor
 
 Instruction
@@ -47,7 +47,7 @@ Instruction
       android:theme="@android:style/Theme.Black.NoTitleBar" >
   </activity>
   <activity
-      android:name="scanpay.it.SPValidationActivity"
+      android:name="scanpay.it.ValidationActivity"
       android:screenOrientation="portrait"
       android:theme="@android:style/Theme.Black.NoTitleBar"
       android:windowSoftInputMode="stateHidden" >
@@ -79,7 +79,7 @@ To get the scan result, you must implement onActivityResult as follows
     super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == RESULT_SCANPAY_ACTIVITY && resultCode == ScanPay.RESULT_SCAN_SUCCESS)
     {
-      SPCreditCard creditCard = (SPCreditCard) data.getParcelableExtra(ScanPay.EXTRA_CREDITCARD);
+      CreditCard creditCard = (CreditCard) data.getParcelableExtra(ScanPay.EXTRA_CREDIT_CARD);
       Toast.makeText(this, creditCard.number + " " + creditCard.month + "/" + creditCard.year + " " + creditCard.cvv, Toast.LENGTH_LONG).show();
     }
     else if (requestCode == RESULT_SCANPAY_ACTIVITY && resultCode == ScanPay.RESULT_SCAN_CANCEL)
@@ -97,7 +97,7 @@ Before you build in release mode, make sure to adjust your proguard configuratio
     *;
   }
   ```
-  
+
   Helpers
 -----------
 
