@@ -30,14 +30,20 @@ public class SPWebViewFiller extends WebViewClient
 
   public void fillField(String fieldId, String value)
   {
-    _web.loadUrl("javascript:document.getElementById('" + fieldId + "').value=\"" + value + "\"");
+   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+		  _web.evaluateJavascript("javascript:document.getElementById('" + fieldId + "').value=\"" + value + "\"", null);
+	  else
+		  _web.loadUrl("javascript:document.getElementById('" + fieldId + "').value=\"" + value + "\"");
   }
 
   public void onPageFinished(WebView view, String url)
   {
     for (String key : _values.keySet())
     {
-      _web.loadUrl("javascript:document.getElementById('" + key + "').value=\"" + _values.get(key) + "\"");
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+        _web.evaluateJavascript("javascript:document.getElementById('" + key + "').value=\"" + _values.get(key) + "\"", null);
+      else
+        _web.loadUrl("javascript:document.getElementById('" + key + "').value=\"" + _values.get(key) + "\"");
     }
   }
 }
